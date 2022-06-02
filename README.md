@@ -1,143 +1,42 @@
+# Using Deep-Convolutional GANs to Improve SSVEP Classification Systems
+**Implemented a DCGAN based-on the paper: [Simulating Brain Signals: Creating Synthetic EEG Data via Neural-Based Generative Models for Improved SSVEP Classification](https://arxiv.org/pdf/1901.07429.pdf)**
+
 
 <!-- ABOUT THE PROJECT -->
-## Using Deep-Convolutional GANs to Improve SSVEP Classification Systems
-<p align="right">(<a href="#top">back to top</a>)</p>
+## About this Project
+In this project, I created a Deep-Convolutional Generative Adversarial Network (DCGAN) that generates synthetic EEG data for SSVEP classification. 
 
-### Built With
+**In order to capture these brain signals, we use something known as a brain-computer interface.** 
+Whenever you’re doing anything, from talking, playing video games, to even reading this article, billions of neurons in our brain are constantly firing. **A brain-computer interface is that’s used to capture these brain signals, analyze them and translate them into a specific output or command.** Now, a lot of methods used for capturing our brain signals using BCIs are generally invasive/semi-invasive, meaning you’d have to undergo some kind of surgery to implant electrodes into your brain. However, that isn’t going to be practical for this project, and scaling any project/product. That’s why one of the most common ways of collecting this data is through a non-invasive method known as electroencephalography (EEG).
 
-* [Next.js](https://nextjs.org/)
-* [React.js](https://reactjs.org/)
-* [Vue.js](https://vuejs.org/)
-* [Angular](https://angular.io/)
-* [Svelte](https://svelte.dev/)
-* [Laravel](https://laravel.com)
-* [Bootstrap](https://getbootstrap.com)
-* [JQuery](https://jquery.com)
+Electroencephalography (or EEG for short) is what’s used to collect electrical activity from the brain, by placing electrodes (small metal discs with thin wires) onto the scalp/surface of your head. These electrodes are what are used to detect different changes in electrical charge due to activity from your brain waves.
 
-<p align="right">(<a href="#top">back to top</a>)</p>
+<br>**The Problem:** EEG classification systems tend ot have a low accuracy, and the root cause stems from the lack of high-quality data; collecting high-quality EEG data in large quantities has been very difficult for various reasons like the high reliance on careful per-subject calibration, fewer bad channels, etc.
 
+That’s when I came across the idea of using creating synthetic EEG data to improve classification systems.
 
+I decided to implement a Deep-Convolutional GAN from the paper mentioend above.
 
-<!-- GETTING STARTED -->
-## Getting Started
-
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
-### Installation
-
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/BagavanMM/EEG-DCGAN.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+***For more information about DCGANs and the problem, feel free to check out this [article](https://bagavanmm.medium.com/using-deep-convolutional-gans-to-increase-ssvep-classification-systems-15794c5f8189)***
 
 
 
-<!-- USAGE EXAMPLES -->
-## Usage
+Here's an overview of the files:
+ - `data_preprocess.py` is a file that preprocesses the EEG data <br>
+ - `DCGAN.ipynb` is the notebook that contains our DCGAN <br>
+ - `Gen.py` is the file that generates the synthetic data <br>
+ - `Data/` contains sample data for our model <br>
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-    - [ ] Nested Feature
-
-See the [open issues](https://github.com/BagavanMM/EEG-DCGAN/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
+## Dependencies and Requirements
+The project was built in Python V3.7 (can run in python 3.6+ only), and requires the following libraries:
+ - [torch=1.1.0+](https://pytorch.org/docs/stable/torch.html)
+ - [numpy=1.16+](https://numpy.org/)
+ - [scipy=1.1.0+](https://scipy.org/)
 
 <!-- CONTACT -->
 ## Contact
 
-Your Name - [@BagavanMM](https://twitter.com/BagavanMM) - bagavan.sivam@gmail.com
+Bagavan Marakathalingasivam - [@BagavanMM](https://twitter.com/BagavanMM) - bagavan.sivam@gmail.com
 
 Project Link: [https://github.com/BagavanMM/EEG-DCGAN](https://github.com/BagavanMM/EEG-DCGAN)
 
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
-
-* []()
-* []()
-* []()
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/BagavanMM/EEG-DCGAN.svg?style=for-the-badge
-[contributors-url]: https://github.com/BagavanMM/EEG-DCGAN/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/BagavanMM/EEG-DCGAN.svg?style=for-the-badge
-[forks-url]: https://github.com/BagavanMM/EEG-DCGAN/network/members
-[stars-shield]: https://img.shields.io/github/stars/BagavanMM/EEG-DCGAN.svg?style=for-the-badge
-[stars-url]: https://github.com/BagavanMM/EEG-DCGAN/stargazers
-[issues-shield]: https://img.shields.io/github/issues/BagavanMM/EEG-DCGAN.svg?style=for-the-badge
-[issues-url]: https://github.com/BagavanMM/EEG-DCGAN/issues
-[license-shield]: https://img.shields.io/github/license/BagavanMM/EEG-DCGAN.svg?style=for-the-badge
-[license-url]: https://github.com/BagavanMM/EEG-DCGAN/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/bagavan-mar
-[product-screenshot]: images/screenshot.png
